@@ -9,9 +9,6 @@ class Search extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
   }
-  // state = {
-  //   searchText: ''
-  // }
 
   onSearchChange(e) {
     this.setState({
@@ -30,13 +27,11 @@ class Search extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <input
           type="search"
-          //value={this.state.searchText}
           onChange={event => this.setState({ searchText: event.target.value })}
-          //ref={(input) => this.query = input}
-          //onChange={this.onSearchChange}
           placeholder="Search for alcohol here..."
           required
         />
+
         <button type="submit">Search</button>
       </form>
     );
