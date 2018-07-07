@@ -1,7 +1,7 @@
 import React from 'react';
 import Product from './Product';
 
-import { fetchLcboEndpoint } from "../api/lcbo.js";
+//import { fetchLcboEndpoint } from "../api/lcbo.js";
 
 
 class ProductList extends React.Component {
@@ -13,9 +13,7 @@ class ProductList extends React.Component {
 		}
 
 		this.handleClick = this.handleClick.bind(this);
-
 	}
-
 
 
 	handleClick(e) {
@@ -46,21 +44,3 @@ class ProductList extends React.Component {
 export default ProductList;
 
 
-// const ProductList = props => {
-// 	const results = props.data;
-// 	let products = results.map(product =>
-// 		<button className="productLink" href="#" key={product.id}><Product url ={product.image_thumb_url} key={product.id}/>
-// 		</button>
-
-// 	);
-
-
-
-// 	return(
-// 		<ul className="productList">
-// 			{products}
-// 		</ul>
-// 	);
-// }
-
-// export default ProductList;
