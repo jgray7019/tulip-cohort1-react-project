@@ -3,13 +3,11 @@ import Product from './Product';
 
 
 class ProductList extends React.Component {
-
 	constructor(props) {
 		super(props);
 		this.state ={
 			productID: '',
 		}
-
 		this.handleClick = this.handleClick.bind(this);
 	}
 
@@ -18,7 +16,6 @@ class ProductList extends React.Component {
 		this.setState({
 			productID: e.target.id
 		})
-		
 		this.props.onProductClick(this.state.productID);
 	}
 
@@ -32,9 +29,12 @@ class ProductList extends React.Component {
 		);
 
 		return(
+			<div>
+			<p> First product click doesn't work and I am still trying to fix it! (second click and all clicks after do work) </p>
 			<ul className="productList">
 				{products}
 			</ul>
+			</div>
 		);
 	}
 }

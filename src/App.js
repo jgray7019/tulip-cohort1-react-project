@@ -21,14 +21,12 @@ class App extends Component {
   }
   componentDidMount() {
     this.performSearch();
-    //this.getLocations();
   }
 
   performSearch(q) {
       fetchLcboEndpoint("products", {
         q: q
     }).then(data => {
-      //console.log(data);
       this.setState({ products: data.result})
     })
     .catch(error => {console.log('Error fetching and parsing data', error)})
@@ -36,8 +34,8 @@ class App extends Component {
 
   getLocations(prodID) {
         fetchLcboEndpoint("stores", {
-          product_id: prodID
-      }).then(data => {
+          product_id: prodID})
+        .then(data => {
           console.log(data);
           let inventory = data.result.map(store => {
            
@@ -50,12 +48,10 @@ class App extends Component {
               lat: store.latitude,
               lng: store.longitude
             })
-          
           })
           this.setState({
             inventory: inventory
           })
-          
         })
       .catch(error => {console.log('Error fetching and parsing data', error)})
     }
@@ -69,7 +65,6 @@ class App extends Component {
        <Header />
        <Search onSearch={this.performSearch}  />
        <ProductList data={this.state.products} onProductClick={this.getLocations}/>
-       
        <MapContainer google={this.state.google} inventory={this.state.inventory}/>
       </div>
     );
